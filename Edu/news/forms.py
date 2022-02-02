@@ -4,7 +4,7 @@ from django.forms import ModelForm, TextInput, DateTimeInput, Textarea
 class ArticleFrom(ModelForm):
     class Meta:
         model = Article
-        fields = ['title', 'anons', 'full_text'] # date deleted
+        fields = ['title', 'anons', 'full_text', 'date'] # date deleted
 
         widgets = {
             'title' : TextInput(attrs={
@@ -18,9 +18,9 @@ class ArticleFrom(ModelForm):
             'full_text' : Textarea(attrs={
                 'class' : 'form-control',
                 'placeholder' : "Текст статьи"
-            })#,
-            #'date' : DateTimeInput(attrs={
-            #    'class' : 'form-control',
-            #    'placeholder' : 'Дата публикации'
-            #})
+            }),
+            'date' : DateTimeInput(attrs={
+                'class' : 'form-control',
+                'placeholder' : 'Дата публикации'
+            })
         }
